@@ -15,17 +15,20 @@
 \usepackage{xstring}
 \usepackage{ifthen}
 \usepackage{enumitem}
+\usepackage[none]{hyphenat}
 \usepackage[xetex,
             pdfauthor={Xiangzeng Zhou},
-            pdftitle={Xiangzeng Zhou Résumé},
-            pdfsubject={Xiangzeng Zhou Résumé},
+%            pdftitle={Xiangzeng Zhou Résumé},
+            pdftitle={Xiangzeng Zhou CV},
+            pdfsubject={Xiangzeng Zhou CV},
             pdfkeywords={object detection, object tracking, pattern recognition, machine learning},
             pdfproducer={xelatex},
             pdfcreator={xelatex}]{hyperref}
 \usepackage[absolute]{textpos}
 \usepackage{enumitem}
-\usepackage{tabularx}
+\usepackage{tabularx, array}
 
+\newcommand{\xphoto}{\includegraphics[scale=0.75]{../../../Images/xzzhou-id3.jpg}}
 %%%%%%%%%% 导入中文环境 %%%%%%%%%%
 %\usepackage{fontspec} %使可以設定字型
 %\usepackage{xeCJK} %讓中英文字型分開設置
@@ -53,44 +56,48 @@
 
 \begin{document}
 \pagestyle{empty}
-\par{ \centering{\Huge Xiang-zeng \textsc{Zhou} } \bigskip\par}
+\par{ \centering{\Huge Curriculum Vitae} \bigskip\par}
 
-\vspace{0.8em}
+\vspace{2em}
+
 \begin{multicols}{2}
-\setlength{\parskip}{0pt}
-\section{Biographical}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-  \textsc{Affiliation}	& \footnotesize{School of Computer Science, Northwestern Polytechnical University} \\
-  \textsc{Address}  & \footnotesize{No. 127, West Youyi Road, Northwestern Polytechnical University, Xi’an, Shaanxi Province, China, 710072}
-\end{tabularx}
+  \setlength{\parskip}{0pt}
+  \section{Personal Details}
+  \begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textsc{Surname}	    & \normalsize{Zhou} \\
+    \textsc{First Name}	    & \normalsize{Xiangzeng} \\
+    \textsc{Date of Birth}  & \normalsize{April 18 1988}\\
+    \textsc{Occupation}     & \normalsize{Ph.D. Student} \\
+    \textsc{Mobile}         & \normalsize{+086-15934898828}
+  \end{tabularx}
 
-\vfill
-\columnbreak
+  \begin{picture}(0, 0)(-397, -62) %\begin{picture}(0, 0)(-159, -5)
+    \put(0, 0){\xphoto}  %\put(0,0){\color{red}\line(1,0){30}}
+  \end{picture}
 
-\section{Online}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-  \textsc{Website}	& \href{http://xenuts.github.io/}{xenuts.github.io} \\
-  \textsc{github}      & \href{https://github.com/xenuts}{github.com/xenuts}\\
-  \textsc{email}       & \href{mailto:xenuts@gmail.com}{xenuts@gmail.com} \\
-  \textsc{LinkedIn}       & \href{http://www.linkedin.com/pub/xiangzeng-zhou/92/2a0/543}{xiangzeng-zhou} \\
-\end{tabularx}
+  \vfill \columnbreak
+  \section{Contacts}
+  \begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textsc{Affiliation}	& \normalsize{School of Computer Science, Northwestern Polytechnical University (NPU)} \\
+    \textsc{Address}      & \normalsize{No.127 West Youyi Road, Xi’an, China, 710072} \\
+    \textsc{Email}        & \normalsize{\href{mailto:xzzhou@nwpu-aslp.org}{xzzhou@nwpu-aslp.org},\ \ \href{mailto:xenuts@gmail.com}{xenuts@gmail.com}}
+  \end{tabularx}
 \end{multicols}
 
-\begin{tabularx}{\textwidth}{@{}l X}
-  \textsc{Interests} & object detection, object tracking, pattern recognition, machine learning
-\end{tabularx}
+\section{Research Interests}
+\normalsize{Object Tracking, Object Recognition, Machine Learning, Deep Learning}
 
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% Qualifications %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\EduEntry}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
-
+\newcommand{\ExpEntry}[4]{
+  \multirow{2}{1.1cm}[1pt]{\textsc{#1}} & \multicolumn{2}{l}{\textbf{#2}} \\
+  \nopagebreak & #3 & \multirow{1}{9.5cm}[75pt]{#4} \\
+  \nopagebreak \multicolumn{3}{c}{} \\ [-2ex]
+}
+ 
 \vspace{0.8em}
-\section{Education}
+\section{Qualifications}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}r l p{5.5cm} r}
-
   \EduEntry{Jul. 2010 - Present}%
   {Ph.D.}%
   {Computer Science \& Technology}%
@@ -102,53 +109,85 @@
   {Northwestern Polytechnical University}
 \end{tabular*}
 
+%%%%%%%%%%%%%%%% Project Experience %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcommand{\ExpEntryS}[6]{
+% \textsc{#1}  & \textbf{#2} #3 \textsc{#4}\\
+% \nopagebreak & \multicolumn{2}{p{5.5in}}{\small{#5}}\\
+% \nopagebreak & \multicolumn{2}{l}{#6} \\
+% \nopagebreak \multicolumn{3}{c}{} \\ [-1ex]
+% }
 
+% \newcommand{\ExpEntryL}[5]{
+% \textsc{#1} & \textbf{#2} #3 \textsc{#4}\\
+% \nopagebreak &\multicolumn{2}{p{5.5in}}{\small{#5}} \\
+% }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\ExpEntryS}[5]{
-\textsc{#1} & \textbf{#2} #3 \textsc{#4}\\
-\nopagebreak &\multicolumn{2}{p{5.5in}}{\small{#5}}\\
-\nopagebreak \multicolumn{3}{c}{} \\ [-1ex]
-}
-
-\newcommand{\ExpEntryL}[5]{
-\textsc{#1} & \textbf{#2} #3 \textsc{#4}\\
-\nopagebreak &\multicolumn{2}{p{5.5in}}{\small{#5}}\\
-}
 \vspace{0.8em}
 \section{Project Experience}
 \setlength\LTleft{0pt}
 \setlength\LTright{0pt}
 \vspace{-0.5em}
-\begin{longtable}{@{\extracolsep{\fill}} l | l r}
+\begin{longtable}{@{\extracolsep{\fill}} l | l l }
+  \ExpEntry{2013.06 $\sim$ 2014.03}
+  {Object Tracking using Deep Learning Technology}
+  {\includegraphics[height=30mm]{../../../Images/edt-450x275.png}}
+  {\raggedright We tackle the generic object tracking problem by a novel approach that incorporates a deep learning architecture with an on-line AdaBoost framework. Inspired by its multi-level feature learning ability, a stacked denoising autoencoder (SDAE) is used to learn multi-level feature descriptors from a set of auxiliary images.}
 
-  \ExpEntryS{2011.5 - 2011.12}%
-  {Towards a Queue-Aware ATM: Monitoring and Managing Queues in front of ATMs}%
-  {}%
-  {}%
+  \ExpEntry{2012.04 $\sim$ 2012.12}
+  {Ball Trajectory Tracking in Tennis Game Video}
+  {\includegraphics[height=30mm]{../../../Images/tennis-450x275.png}}
+  {A two layered data association method to improve the robustness of tennis ball tracking. At the local layer, a shift token transfer method is proposed, based on shift window processing, to generate a set of short trajectories or ``trajectorylets''. At the global layer, a unique ball trajectory is obtained by applying a dynamic programming based splice method to a directed acyclic graph consisting of trajectorylets.}  
+  \ExpEntry{2011.05 $\sim$ 2011.12}
+  {Towards a Queue-Aware ATM: Monitoring and Managing Queues in front of ATMs}
+  {\includegraphics[height=30mm]{../../../Images/atm-450x275.png}}
   {In order to monitoring queues in front of ATMs, apply stereo camera real-time object tracking approach. With the aid of camera’s real-time tracking, develop a simple application system which can give customer a suggested queue and estimated queuing time.}
-
-  \ExpEntryS{2010.9}%
-  {Keyword Spotting based Real-time Dialog System}%
-  {}%
-  {}%
+  
+  \ExpEntry{2010.09}
+  {Keyword Spotting based Real-time Dialog System}
+  {\includegraphics[height=30mm]{../../../Images/best-450x275.png}}
   {Make a question-set limited Dialog System implemented by Keyword Spotting approach with improved Online Garbage Model. My main task is proposing a improved method based on Online Garbage Keyword Spotting Model.}
 
-  \ExpEntryS{2010.9}%
-  {Keyword Spotting Tool}%
-  {}%
-  {}%
-  {Make a Keyword Spotting Tool which user can dynamically add or remove keywords by hand.}
+  \ExpEntry{2010.09}
+  {Keyword Spotting Tool}
+  {\includegraphics[height=30mm]{../../../Images/keyword-450x275.png}}
+  {Make a Keyword Spotting Tool which user can dynamically add or remove keywords by hand.} 
 \end{longtable}
 
+% \begin{longtable}{@{\extracolsep{\fill}} l | l r}
+%   \ExpEntryS{2013.6 - 2014.3}%  
+%   {Object Tracking using Deep Learning Technology}%
+%   {} {} {aasf as sfasdf asf asdfas asdf asf w fsef t ewrtf asgsdfasdf asdf sa sdf patterns for english, usenglishmax, dumylang, nohyphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian.}
+% {}%  {\includegraphics[width=45mm]{edt.png}}
+  
+%   \ExpEntryS{2012.4 - 2012.12}%  
+%   {Ball Trajectory Tracking in Tennis Game Video}%
+%   {} {} {}
+%   {\includegraphics[width=45mm]{tennis.png}}
+  
+%   \ExpEntryS{2011.5 - 2011.12}%  
+%   {Towards a Queue-Aware ATM: Monitoring and Managing Queues in front of ATMs}%
+%   {} {}
+%   {In order to monitoring queues in front of ATMs, apply stereo camera real-time object tracking approach. With the aid of camera’s real-time tracking, develop a simple application system which can give customer a suggested queue and estimated queuing time.}
+%   {\includegraphics[width=45mm]{atm.jpg}}
 
+%   \ExpEntryS{2010.9}%
+%   {Keyword Spotting based Real-time Dialog System}%
+%   {} {}
+%   {Make a question-set limited Dialog System implemented by Keyword Spotting approach with improved Online Garbage Model. My main task is proposing a improved method based on Online Garbage Keyword Spotting Model.}
+%   {\includegraphics[width=45mm]{bestknown.jpg}}
 
+%   \ExpEntryS{2010.9}%
+%   {Keyword Spotting Tool}%
+%   {} {} 
+%   {Make a Keyword Spotting Tool which user can dynamically add or remove keywords by hand.}
+%   {\includegraphics[width=45mm]{keyword.jpg}}
+% \end{longtable}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% Skills \& Languages %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\SkillEntry}[2]{ \item #2 #1 }
 \vspace{-0.5em}
-\section{Skills \& Languages}
+\section{Skills}
 \vspace{-1em}
 \begin{multicols}{4}
 \raggedcolumns
@@ -179,9 +218,6 @@
 %  \end{footnotesize}
 
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\newcommand{\proj}[3]{
@@ -207,33 +243,15 @@
 %\end{tabularx}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\let\originalbibitem\bibitem
-\def\bibitem#1#2\par{%
-  \noexpandarg
-  \originalbibitem{#1}
-  \StrSubstitute{#2}{Xiangzeng Zhou}{\textbf{Xiangzeng Zhou}}\par}
-
-\nocite{Zhou-2014-Tennis}
-\nocite{Zhou-2014-Ensemble}
-\nocite{Zhou-2013-Two}
-\nocite{Huang-2012-Detection}
-\nocite{Li-2011-Realtime}
-\nocite{Niu-2011-Multiconfidence}
-\nocite{Xie-2010-Speech}
-
-\renewcommand\refname{Publications}
-{\footnotesize \bibliography{Xenuts-Bibliography}}
-\bibliographystyle{plainyr-rev}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% Honors/Awards  %%%%%%%%%%%%%%%%%%%%%
 
 \vspace{0.8em}
-\section{Honors/Awards}
+\section{Honors and Awards}
 \begin{tabularx}{\textwidth}{@{}r|X l|p{4.9cm}@{}}
+2014 & The Paper of ICIP 2014 was recognized as the Top 10 papers \\
+2014 & Received IEEE Signal Processing Society Travel Grant to Attend ICIP 2014, Paris, France \\
+2013 & Received IEEE Signal Processing Society Travel Grant to Attend ICASSP 2013, Vancouver, Canada \\
+2011 & Awarded by Northwestern Polytechnical University Scholarship Fund for Six-month Visiting Researcher \\
 2010 & First Prize Scholarship of Northwestern Polytechnical University \\
 2009 & National Endeavor Scholarship \\
 2009 & First Prize of C Programming Contest of Northwestern Polytechnical University \\
@@ -245,12 +263,12 @@
 2007 & Third Prize of Mathematical Modeling Contest of Northwestern Polytechnical University
 \end{tabularx}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% Activities %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \vspace{0.8em}
 \section{Activities}
 \begin{tabularx}{\textwidth}{@{}r|X l|p{4.9cm}@{}}
+Oct. 28, 2014            &  \textbf{Oral Presentation} on ICIP 2014 \\
 May 30, 2013             &  \textbf{Poster Presentation} on ICASSP 2013 \\
 Mar., 2012 - Sept., 2012 &  \textbf{Visiting Researcher} at University of East Anglia, Norwich, U.K. \\
 Apr., 2011 - Oct., 2011  &  \textbf{Conference Organizing Committee Member} for APSIPA ASC 2011 \\
@@ -260,19 +278,42 @@ Jul., 2009               &  \textbf{Intern} at China Pacific Insurance (Group) C
 Jun., 2009               &  \textbf{Intern} at KunShan (Suzhou) Ambow Software Training Base
 \end{tabularx}
 
+%%%%%%%%%%%%%%%%% Publications %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\originalbibitem\bibitem
+\def\bibitem#1#2\par{%
+  \noexpandarg
+  \originalbibitem{#1}
+  \StrSubstitute{#2}{Xiangzeng Zhou}{\textbf{Xiangzeng Zhou}}\par}
+
+\nocite{Zhou-2014-Ensemble}
+\nocite{Zhou-2014-Tennis}
+\nocite{Zhou-2013-Two}
+\nocite{Huang-2012-Detection}
+\nocite{Li-2011-Realtime}
+\nocite{Niu-2011-Multiconfidence}
+\nocite{Xie-2010-Speech}
+
+\renewcommand\refname{Publications}
+{\footnotesize \bibliography{Xenuts-Bibliography}}
+\bibliographystyle{plainyr-rev}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \null\vfill
 \footnotesize{
-  %Online:  \href{http://resume.malloc47.com}{resume.malloc47.com} \hfill
-  %Full CV: \href{http://cv.malloc47.com}{cv.malloc47.com} \hfill
-  Source:  \href{https://github.com/zenhacker/cv}{github.com/zenhacker/cv/}
+  \begin{picture}(0, 0)(0,0) %\begin{picture}(0, 0)(-159, -5)
+    \put(0, -20){\includegraphics[scale=0.05]{../../../Images/linkedin-qrcode.png}}
+  \end{picture}  \hfill
+  LinkedIn: \href{http://www.linkedin.com/pub/xiangzeng-zhou/92/2a0/543}{http://www.linkedin.com/pub/xiangzeng-zhou/92/2a0/54}
 }
 
 \pagestyle{myheadings}
-\markright{Xiang-zeng Zhou}
+%\markright{Xiang-zeng Zhou LinkedIn: \href{http://www.linkedin.com/pub/xiangzeng-zhou/92/2a0/543}{http://www.linkedin.com/pub/xiangzeng-zhou/92/2a0/543}}
 
 %%\XeTeXpdffile ''resume.pdf'' page 1 scaled 800
 
 \end{document}
+
+
+
