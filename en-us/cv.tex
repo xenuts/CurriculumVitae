@@ -27,6 +27,7 @@
 \usepackage[absolute]{textpos}
 \usepackage{enumitem}
 \usepackage{tabularx, array}
+\usepackage{ragged2e}
 
 \newcommand{\xphoto}{\includegraphics[scale=0.75]{../../../Images/xzzhou-id3.jpg}}
 %%%%%%%%%% 导入中文环境 %%%%%%%%%%
@@ -91,7 +92,7 @@
 \newcommand{\EduEntry}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
 \newcommand{\ExpEntry}[4]{
   \multirow{2}{1.1cm}[1pt]{\textsc{#1}} & \multicolumn{2}{l}{\textbf{#2}} \\
-  \nopagebreak & #3 & \multirow{1}{9.5cm}[75pt]{#4} \\
+  \nopagebreak & #3 & \multirow{1}{9.5cm}[75pt]{\justifying{#4}} \\
   \nopagebreak \multicolumn{3}{c}{} \\ [-2ex]
 }
  
@@ -140,17 +141,18 @@
   \ExpEntry{2011.05 $\sim$ 2011.12}
   {Towards a Queue-Aware ATM: Monitoring and Managing Queues in front of ATMs}
   {\includegraphics[height=30mm]{../../../Images/atm-450x275.png}}
-  {In order to monitoring queues in front of ATMs, apply stereo camera real-time object tracking approach. With the aid of camera’s real-time tracking, develop a simple application system which can give customer a suggested queue and estimated queuing time.}
+  {We apply a real-time object tracking approach based on a stereo camera placed in front of ATM machines. With the aid of camera’s real-time monitoring, tracking and counting, a queue-aware system is implemented to provide each arriving customer a suggested queue number and estimated corresponding queuing time.}
   
   \ExpEntry{2010.09}
   {Keyword Spotting based Real-time Dialog System}
   {\includegraphics[height=30mm]{../../../Images/best-450x275.png}}
-  {Make a question-set limited Dialog System implemented by Keyword Spotting approach with improved Online Garbage Model. My main task is proposing a improved method based on Online Garbage Keyword Spotting Model.}
+  {This is a real-time dialog system implemented with keyword spotting approach so as to receive spontaneous speeches from general users. The question-set is predefined by user and can be changed easily, so it's applicable to many specific scenarios with limited question-set running on PC.}
+ % {A question-set limited dialog system implemented by keyword spotting approach with improved online garbage model. My main task is proposing a improved method based on online garbage keyword spotting model.}
 
   \ExpEntry{2010.09}
   {Keyword Spotting Tool}
   {\includegraphics[height=30mm]{../../../Images/keyword-450x275.png}}
-  {Make a Keyword Spotting Tool which user can dynamically add or remove keywords by hand.} 
+  {A Chinese keyword spotting tool which keywords set can be online defined (add/remove) by users easily. This tool receives a spontaneous speech from user via microphone and picks out all keywords defined in the speech. This tool embeds a speech recognition component and all keywords are presented in term of text and Chinese PinYin.} 
 \end{longtable}
 
 % \begin{longtable}{@{\extracolsep{\fill}} l | l r}
